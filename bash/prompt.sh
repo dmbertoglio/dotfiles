@@ -1,5 +1,7 @@
 #!/bin/bash
-# Script to define the bash prompt, isolating it from any other configuration
+
+source ~/.bash/git-prompt.sh
+
 function prompt {
   tput sgr0
   local bold=$(tput bold)
@@ -30,7 +32,9 @@ function prompt {
     hostStyle="\[$yellow\]"
   fi
 
-  PS1="\[$blue\][\A \d] \[$purple\]\w\n\[$userStyle\]\u\[$reset$white\]@\[$hostStyle\]\h\[$reset$white\]: \[$reset$white\]\$ \[$reset\]"
+  PS1="\[$blue\][\A \d] \[$purple\]\w\[$green\]"
+  PS1+='$(__git_ps1 " (%s)")'
+  PS1+="\n\[$userStyle\]\u\[$reset$white\]@\[$hostStyle\]\h\[$reset$white\]: \[$reset$white\]\$ \[$reset\]"
   export PS1
 }
 
