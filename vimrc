@@ -26,6 +26,8 @@ set hidden
 
 " Turn on syntax highlight
 syntax on
+syntax enable
+set background=dark
 
 " ==================== Indentation ====================
 
