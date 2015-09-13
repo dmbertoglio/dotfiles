@@ -109,7 +109,7 @@ let &colorcolumn=join(range(81,100), ",")
 highlight ColorColumn ctermbg=237 guibg=#323232
 
 set background=dark
-colorscheme slate
+colorscheme behelit
 
 " Airline settings
 let g:airline_powerline_fonts = 1
