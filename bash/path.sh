@@ -11,6 +11,7 @@ export PATH=${PATH}:$ANDROID_HOME/tools
 export PATH=${PATH}:$ANDROID_HOME/platform-tools
 export PATH=${PATH}:~/bin
 export PATH=$PATH:/usr/local/mysql/bin
+export PATH=$PATH:/usr/local/bin
 
 # Setting PATH for Python 3.3
 # The orginal version is saved in .bash_profile.pysave

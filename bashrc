@@ -16,7 +16,8 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source ~/.bash/prompt.sh
 source ~/.bash/path.sh
 source ~/.bash/alias.sh
+source ~/.bash/git-completion.sh
 
 source /usr/local/share/chruby/chruby.sh
-chruby 2.2.2
-
+source /usr/local/share/chruby/auto.sh
+chruby 2.3.0

@@ -2,6 +2,8 @@
 
 source ~/.bash/git-prompt.sh
 
+export GIT_PS1_SHOWDIRTYSTATE=1
+
 function prompt {
   newPWD="${PWD}"
   user="whoami"
@@ -25,17 +27,24 @@ function prompt {
 
 PROMPT_COMMAND=prompt
 
+export base03=$(tput setaf 234)
+export base02=$(tput setaf 235)
+export base01=$(tput setaf 240)
+export base00=$(tput setaf 241)
+export base0=$(tput setaf 244)
+export base1=$(tput setaf 245)
+export base2=$(tput setaf 254)
+export base3=$(tput setaf 230)
+export yellow=$(tput setaf 136)
+export orange=$(tput setaf 166)
+export red=$(tput setaf 160)
+export magenta=$(tput setaf 125)
+export violet=$(tput setaf 61)
 export blue=$(tput setaf 33)
-export black=$(tput setaf 0)
 export cyan=$(tput setaf 37)
-export green=$(tput setaf 46)
-export orange=$(tput setaf 202)
-export purple=$(tput setaf 92)
-export red=$(tput setaf 124)
-export white=$(tput setaf 15)
-export yellow=$(tput setaf 226)
+export green=$(tput setaf 64)
 
-PS1="\[$green\](\[$orange\]\u\[$white\]@\[$yellow\]\h \[$cyan\]\$(date \"+%a, %d %b %y\")\[$green\])—\${fill}—(\[$purple\]\$newPWD\[$red\]\$(__git_ps1 \" [%s]\")\[$green\])\n\[$green\](\[$blue\]\$(date \"+%H:%M\")\[$green\])\[$white\]\$ "
+PS1="\[$yellow\](\[$orange\]\u\[$base1\]@\[$violet\]\h \[$blue\]\$(date \"+%a, %d %b %y\")\[$yellow\])—\${fill}—(\[$magenta\]\$newPWD\[$green\]\$(__git_ps1 \" [%s]\")\[$yellow\])\n\[$yellow\](\[$blue\]\$(date \"+%H:%M\")\[$yellow\])\[$base1\]\$ "
 
 export PS1
 

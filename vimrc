@@ -31,11 +31,11 @@ set background=dark
 
 " ==================== Indentation ====================
 
-set autoindent
-set smartindent
-set smarttab
-set shiftwidth=2
-set softtabstop=2
+"set autoindent
+"set smartindent
+"set smarttab
+"set shiftwidth=2
+"set softtabstop=2
 set tabstop=2
 set expandtab
 
@@ -75,6 +75,15 @@ set smartcase                          " ...unless capital character typed
 
 " ==================== Custom Mappings ====================
 
+" Map leader to space
+map <space> <leader>
+
+" Switch panes with h,j,k,l
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Have Y act like D and C, yank to EOL
 map Y y$
 
@@ -103,15 +112,29 @@ endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespace()
 
 " ==================== Colors ====================
+let &t_Co=256
 
 " Highlight characters over 80
-let &colorcolumn=join(range(81,100), ",")
-highlight ColorColumn ctermbg=237 guibg=#323232
+set colorcolumn=80
 
 set background=dark
-colorscheme behelit
+colorscheme solarized
 
 " Airline settings
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme="solarized"
 
+" ==================== Plugins ====================
+
+" Syntastic Config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_ruby_checkers = ['rubocop']
