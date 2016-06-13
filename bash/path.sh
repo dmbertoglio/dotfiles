@@ -13,6 +13,11 @@ export PATH=${PATH}:~/bin
 export PATH=$PATH:/usr/local/mysql/bin
 export PATH=$PATH:/usr/local/bin
 
+# Set GOPATH for go programming
+export GOPATH=$HOME/projects/go_work
+PATH=$PATH:$GOPATH/bin
+
+
 # Setting PATH for Python 3.3
 # The orginal version is saved in .bash_profile.pysave
 PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/3.3/bin"

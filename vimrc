@@ -31,11 +31,11 @@ set background=dark
 
 " ==================== Indentation ====================
 
-"set autoindent
-"set smartindent
-"set smarttab
-"set shiftwidth=2
-"set softtabstop=2
+set autoindent
+set smartindent
+set smarttab
+set shiftwidth=2
+set softtabstop=2
 set tabstop=2
 set expandtab
 
@@ -138,3 +138,6 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_mode_map = { "mode": "passive" }
+
+let NERDSpaceDelims=1
