@@ -1,0 +1,11 @@
+# .bashrc
+export DOTFILES=$HOME/projects/dotfiles
+
+source $DOTFILES/bash/aliases
+source $DOTFILES/bash/prompt
+source $DOTFILES/bash/paths
+source $DOTFILES/git/git-completion.sh
+source $DOTFILES/git/git-prompt.sh
+
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh

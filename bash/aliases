@@ -1,0 +1,7 @@
+#!/bin/bash
+
+alias ll='ls -lG'
+alias be='bundle exec'
+alias start_postgres='pg_ctl -D /usr/local/var/postgres/data -l /usr/local/var/postgres/server.log start'
+
+set -o vi
