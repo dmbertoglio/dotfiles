@@ -32,6 +32,7 @@ set background=dark
 " ==================== Indentation ====================
 
 set autoindent
+set cindent
 set smartindent
 set smarttab
 set shiftwidth=2
@@ -141,3 +142,5 @@ let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_mode_map = { "mode": "passive" }
 
 let NERDSpaceDelims=1
+
+let g:ctrlp_custom_ignore='vendor/bundle\|log/\|bin/\|tmp/'
