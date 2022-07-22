@@ -1,0 +1,10 @@
+# .bashrc
+export DOTFILES=$HOME/projects/dotfiles
+
+source $DOTFILES/git/git-prompt.sh
+source $DOTFILES/zsh/aliases
+source $DOTFILES/zsh/prompt
+source $DOTFILES/zsh/paths
+# source $DOTFILES/git/git-completion.sh
+
+export PATH="/opt/homebrew/opt/node@14/bin:$PATH"

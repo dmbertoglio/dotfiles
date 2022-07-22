@@ -1,0 +1,50 @@
+#!/bin/zsh
+setopt PROMPT_SUBST
+export GIT_PS1_SHOWDIRTYSTATE=1
+
+function prompt {
+  newPWD="${PWD}"
+  user="whoami"
+  host=$(echo -n $HOSTNAME | sed -e "s/[\.].*//")
+  git_branch=$(__git_ps1 " [%s]")
+
+  let promptsize=$(echo -n "($newPWD $git_branch)" | wc -c | tr -d " ")
+
+  let fillsize=${COLUMNS}-${promptsize}
+  fill=""
+  while [ "$fillsize" -gt "0" ]
+  do
+    fill="${fill}—"
+    let fillsize=${fillsize}-1
+  done
+}
+
+PROMPT_COMMAND=prompt
+
+export base03=234
+export base02=235
+export base01=240
+export base00=241
+export base0=244
+export base1=245
+export base2=254
+export base3=230
+export yellow=136
+export orange=166
+export red=160
+export magenta=125
+export violet=61
+export blue=33
+export cyan=37
+export green=64
+
+zstyle ':completion:*:*:git:*' script $HOME/projects/dotfiles/git/git-completion.zsh
+autoload -Uz compinit && compinit
+
+#PS1="\[$yellow\](\[$blue\]\$newPWD\[$green\]\$(__git_ps1 \" [%s]\")\[$yellow\])\${fill}\n\[$yellow\](\[$orange\]\u\[$base1\]@\[$violet\]\h\[$yellow\])\[$base1\]\$ "
+#PS1='$yellow($blue$PWD$green$(__git_ps1 " [%s]")$yellow)'$'\n''$yellow($orange%n$base1@$violet%m$yellow)$base1\$ '
+PS1='%F{136}(%F{33}$PWD%F{64}$(__git_ps1 " [%s]")%F{136})'$'\n''%F{136}(%F{166}%n%F{245}@%F{61}%m%F{136})%F{245}\$ '
+
+export PS1
+
+set -o vi
